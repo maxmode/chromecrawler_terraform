@@ -8,7 +8,7 @@
 Incude as a module into your terraform file
 ```
 module "chromecrawler_terraform" {
-  source = ""github.com/maxmode/chromecrawler_terraform""
+  source = "github.com/maxmode/chromecrawler_terraform"
 
   # Any string. Is used to unique resource naming.
   environment = "prod"
@@ -50,7 +50,7 @@ output "API_BASE_URI" {
 
 # Sample test
 Tests are executed in a sandbox environment, so only limited JS environment is available:
-```
+```javascript
 
 // Sample selenimum-webdriver script that visits google.com
 // This uses the selenium-webdriver 3.4 package.
@@ -75,7 +75,7 @@ $browser.getTitle().then(function(title) {
 Variable `callback`, available in SDK, - is a a callback of Lambda function.
 By triggering it Lambda may return response body, status code and headers to API Hub. 
 
-A function that will make a screenshot and return it to API
+Sample function that will make a screenshot and return it to API
 ```javascript
 function takeScreenshotAndClose(statusCode = 200) {
     $browser.getTitle().then(function(title) {
