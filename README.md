@@ -58,6 +58,7 @@ Tests are executed in a sandbox environment, so only limited JS environment is a
 // $browser = webdriver session
 // $driver = driver libraries
 // console.log will output to AWS Lambda logs (via Cloudwatch)
+// callback is a callback from Lambda's index.handler. Execution of the callback will return response to API Gateway
 
 console.log('About to visit google.com...');
 $browser.get('http://www.google.com/ncr');
@@ -73,7 +74,7 @@ $browser.getTitle().then(function(title) {
 # How to make and return a screenshot via API?
  
 Variable `callback`, available in SDK, - is a a callback of Lambda function.
-By triggering it Lambda may return response body, status code and headers to API Hub. 
+By triggering it Lambda may return response body, status code and headers to API Gateway. 
 
 Sample function that will make a screenshot and return it to API
 ```javascript
